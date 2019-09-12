@@ -147,9 +147,7 @@ class Featured_Post
     }
     public function manage_posts_columns($columns)
     {
-        global $current_user;
-        get_currentuserinfo();
-        if (current_user_can('edit_posts', $user_id)) {
+        if (current_user_can('edit_posts')) {
             $columns['featured'] = __('Featured', 'featured-post');
         }
         return $columns;
